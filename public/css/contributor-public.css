@@ -1,0 +1,39 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+#authorBox {
+    background: #f0f0f0; 
+    border: 1px solid #d2d2d2; 
+    padding: 10px; 
+    overflow:hidden; 
+    color: #333;
+}
+#authorBox h3 {
+    font-size: 18px; 
+    color:#333; 
+    margin:0; 
+    padding:10px 10px 5px 10px;
+}
+#authorBox h3 a {
+    text-decoration:none; 
+    color: #333; 
+    font-weight: bold;
+}
+#authorBox img {
+    margin:5px 10px 0 5px; 
+    padding:5px; 
+    float:left; 
+    border: 1px solid #ddd; 
+    max-width: 50px; 
+    height: auto;
+}
+#authorBox p {
+    color:#333; 
+    margin:0; 
+    padding:0px 10px 10px 10px;
+}
+#authorBox p a {
+    color:#333;
+}
