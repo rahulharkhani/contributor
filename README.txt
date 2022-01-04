@@ -4,7 +4,7 @@ Donate link: https://thatpeoples.com/
 Tags: Contributor, Post, Post Contributor
 Requires at least: 4.0
 Tested up to: 5.8.2
-Stable tag: 1.1
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,11 +20,11 @@ Contributor Plugin that show Post Contributors List after the content.
 
 1. Visit 'Plugins > Add New'
 2. Search for 'Contributor'
-3. Activate Buddy Views from your Plugins page.
+3. Activate Contributor from your Plugins page.
 
 = From WordPress.org =
 
-1. Download Buddy Views.
+1. Download Contributor.
 2. Upload the 'contributor' directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
 3. Activate Contributor from your Plugins page.
 
