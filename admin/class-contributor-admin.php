@@ -138,7 +138,7 @@ class Contributor_Admin {
 				foreach ($users as $user) {
 					?>
 
-					<input type="checkbox" id="<?php echo $user->display_name; ?>" name="contributorData[]" value="<?php echo $user->ID; ?>" <?php if (!empty($contributorData) ) { if (in_array($user->ID, $contributorData)) { echo "checked"; } } ?> />
+					<input type="checkbox" id="<?php echo $user->display_name; ?>" name="contributorData[]" value="<?php echo  esc_html( $user->ID ); ?>" <?php if (!empty($contributorData) ) { checked(in_array( $user->ID, $contributorData ), true); } ?> />
 					<label for="<?php echo $user->display_name; ?>"><?php echo esc_html( $user->display_name ) . ' [' . esc_html( $user->user_email ) . ']'; ?></label><br>
 					
 					<?php
