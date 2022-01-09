@@ -113,7 +113,7 @@ class Contributor_Public {
 		if (is_singular() && $post->post_type == 'post') {
 			
 			$post_id = get_the_ID();
-			$contributorData = maybe_unserialize( get_post_meta( $post_id, '_contributors', true ) );
+			$contributorData = get_post_meta( $post_id, '_contributors', true );
 			
 			if(!empty($contributorData)) {
 			

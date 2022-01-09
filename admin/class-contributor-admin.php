@@ -121,7 +121,7 @@ class Contributor_Admin {
 
 		global $wpdb;
 		$post_id = get_the_ID();
-		$contributorData = maybe_unserialize(get_post_meta( $post_id, '_contributors', true ));
+		$contributorData = get_post_meta( $post_id, '_contributors', true );
 		$args = array(
 			'role__in'    => array('administrator', 'author', 'editor'),
 			'orderby' => 'user_nicename',
@@ -138,8 +138,8 @@ class Contributor_Admin {
 				foreach ($users as $user) {
 					?>
 
-					<input type="checkbox" id="<?php echo $user->display_name; ?>" name="contributorData[]" value="<?php echo  esc_html( $user->ID ); ?>" <?php if (!empty($contributorData) ) { checked(in_array( $user->ID, $contributorData ), true); } ?> />
-					<label for="<?php echo $user->display_name; ?>"><?php echo esc_html( $user->display_name ) . ' [' . esc_html( $user->user_email ) . ']'; ?></label><br>
+					<input type="checkbox" id="<?php echo esc_html( $user->display_name ); ?>" name="contributorData[]" value="<?php echo esc_html( $user->ID ); ?>" <?php if (!empty($contributorData) ) { checked(in_array( $user->ID, $contributorData ), true); } ?> />
+					<label for="<?php echo esc_html( $user->display_name ); ?>"><?php echo esc_html( $user->display_name ) . ' [' . esc_html( $user->user_email ) . ']'; ?></label><br>
 					
 					<?php
 				}
@@ -157,9 +157,10 @@ class Contributor_Admin {
 			return;
 		}
 		
-		if(isset($_POST['contributorData']) && !empty($_POST['contributorData'])) {
+		$contributorData = isset( $_POST['contributorData'] ) ? (array) $_POST['contributorData'] : array();
+		if(isset($contributorData) && !empty($contributorData)) {
 			
-			$contributorData = maybe_serialize($_POST['contributorData']);
+			$contributorData = array_map( 'esc_attr', $contributorData );
 			update_post_meta( $post_id, '_contributors', $contributorData );
 
 		} else {
