@@ -160,7 +160,7 @@ class Contributor_Admin {
 		$contributorData = isset( $_POST['contributorData'] ) ? (array) $_POST['contributorData'] : array();
 		if(isset($contributorData) && !empty($contributorData)) {
 			
-			$contributorData = array_map( 'esc_attr', $contributorData );
+			$contributorData = array_map( 'sanitize_text_field', $contributorData );
 			update_post_meta( $post_id, '_contributors', $contributorData );
 
 		} else {
