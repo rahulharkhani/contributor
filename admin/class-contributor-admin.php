@@ -157,17 +157,9 @@ class Contributor_Admin {
 			return;
 		}
 		
-		$contributorData = isset( $_POST['contributorData'] ) ? (array) $_POST['contributorData'] : array();
-		if(isset($contributorData) && !empty($contributorData)) {
-			
-			$contributorData = array_map( 'sanitize_text_field', $contributorData );
-			update_post_meta( $post_id, '_contributors', $contributorData );
+		$contributorData = ( isset( $_POST['contributorData'] ) && !empty($_POST['contributorData']) ) ? array_map( 'sanitize_text_field', (array) $_POST['contributorData'] ) : '';
+		update_post_meta( $post_id, '_contributors', $contributorData );
 
-		} else {
-			
-			update_post_meta( $post_id, '_contributors', '' );
-
-		}
 	}
 
 }
