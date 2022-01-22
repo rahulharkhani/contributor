@@ -18,7 +18,7 @@
  *
  * @package    Contributor
  * @subpackage Contributor/admin
- * @author     Rahul Harkhani <rahul.l.harkhani@doyenhub.com>
+ * @author     Rahul Harkhani <rahul.harkhani11@gmail.com>
  */
 class Contributor_Admin {
 

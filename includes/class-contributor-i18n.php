@@ -22,7 +22,7 @@
  * @since      1.0.0
  * @package    Contributor
  * @subpackage Contributor/includes
- * @author     Rahul Harkhani <rahul.l.harkhani@doyenhub.com>
+ * @author     Rahul Harkhani <rahul.harkhani11@gmail.com>
  */
 class Contributor_i18n {
 
